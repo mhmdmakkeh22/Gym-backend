@@ -23,6 +23,10 @@ const traineeSchema = mongoose.Schema(
         type : String,
         required: [true, "Please enter a subscription type"],
     },
+    urlImage:
+    {
+     type : String
+    }
   },
   {
     timestamps: true,

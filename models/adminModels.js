@@ -22,6 +22,10 @@ const adminSchema = mongoose.Schema(
       type: Boolean,
       
     },
+    urlImage:
+    {
+     type : String
+    }
 
   },
   {
