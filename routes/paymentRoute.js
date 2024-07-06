@@ -7,12 +7,12 @@ const { protect, superAdmin } = require('../middleware/superAdminsAuth');
 router.post('/', protect, superAdmin, addPayment);
 
 // Update a payment
-router.post('/update', protect, superAdmin, updatePayment);
+router.post('/update/:id', protect, superAdmin, updatePayment);
 
 // Delete a payment
 router.post('/delete', protect, superAdmin, deletePayment);
 
 // Get all payments
-router.get('/all', protect, superAdmin, getPayments);
+router.get('/', protect, superAdmin, getPayments);
 
 module.exports = router;

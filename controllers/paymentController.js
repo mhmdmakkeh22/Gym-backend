@@ -33,7 +33,8 @@ const addPayment = asyncHandler(async (req, res) => {
 
 
   const updatePayment = asyncHandler(async (req, res) => {
-    const { id, payerId, amount, currency, paymentMethod, status } = req.body;
+    const id = req.params.id;
+    const { payerId, amount, currency, paymentMethod, status } = req.body;
   
     // Check if all required fields are provided
     if (!id) {
