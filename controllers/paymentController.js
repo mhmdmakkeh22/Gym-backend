@@ -86,9 +86,25 @@ const getPayments = asyncHandler(async (req, res) => {
   res.status(200).json(payments);
 });
 
+const getPaymentsByPayerId = async (req, res) => {
+  try {
+    const  payerId  = req.params.id;
+    console.log('Requested payerId:', payerId);
+
+    const payments = await Payment.find( {payerId} );
+    console.log('Found payments:', payments);
+
+    res.status(200).json(payments);
+  } catch (error) {
+    console.error('Error fetching payments:', error);
+    res.status(500).json({ error: error.message });
+  }
+};
+
 module.exports = {
   addPayment,
   updatePayment,
   deletePayment,
   getPayments,
+  getPaymentsByPayerId
 };
